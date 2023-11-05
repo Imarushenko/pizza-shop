@@ -42,6 +42,18 @@ main {
   color: #ddd;
 }
 
+.restaurant-title {
+  font-family: 'Poppins', sans-serif;
+  color: #ac3f33;
+  text-align: center;
+  font-size: 2rem;
+  margin: 20px 0;
+  text-transform: uppercase; 
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
 .link {
   text-decoration: none;
 }

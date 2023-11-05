@@ -16,7 +16,7 @@ const HomeScreen = () => {
 
   return (
     <>
-      <h1>Check Out Our Best Dishes</h1>
+      <h1 className="restaurant-title">Hapisga: Where Every Slice Tells a Story</h1>
       <Row>
         {products.map((product) => (
           <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
