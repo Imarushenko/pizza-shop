@@ -23,10 +23,10 @@ const ProductScreen = () => {
       </Link>
       <Row>
         <Col md={5}>
-          <Image src={product.image} alt={product.name} fluid />
+          <Image src={product.image} alt={product.name} fluid className="rounded" />
         </Col>
         <Col md={4}>
-          <ListGroup variant="flush">
+          <ListGroup variant="flush" className="rounded">
             <ListGroup.Item>
               <h3>{product.name}</h3>
             </ListGroup.Item>

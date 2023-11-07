@@ -25,16 +25,23 @@ main {
 }
 
 /* more styling */
+.card {
+  background-color: #f0f0f0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 .btn {
-  background-color: #333; /* Dark gray background color */
-  color: #fff; /* White text color */
+  background-color: #333;
+  color: #fff;
   border: none;
   padding: 10px 20px;
   cursor: pointer;
-  transition: background-color 0.3s ease-in-out; /* Smooth transition */
-
-  /* Adding rounded corners for a nicer appearance */
+  transition: background-color 0.3s ease-in-out;
   border-radius: 4px;
+}
+
+body {
+  background-color: #ffcc99;
 }
 
 .btn:hover {
@@ -43,16 +50,17 @@ main {
 }
 
 .restaurant-title {
-  font-family: 'Poppins', sans-serif;
-  color: #ac3f33;
-  text-align: center;
-  font-size: 2rem;
+  font-family: 'Pacifico', cursive; /* Applying Pacifico font */
+  color: #9b59b6; /* Darker Purple as an example */
+  text-align: left; /* Adjust to your desired alignment */
+  font-size: 2.2rem; /* Slightly larger font size */
   margin: 20px 0;
-  text-transform: uppercase; 
+  text-transform: uppercase;
   letter-spacing: 2px;
+  font-weight: bold; /* Making the text bolder */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  /* Adjust the color code, alignment, and other properties to your preference */
 }
-
 
 .link {
   text-decoration: none;
