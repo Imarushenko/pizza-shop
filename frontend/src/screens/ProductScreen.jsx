@@ -12,7 +12,7 @@ const ProductScreen = () => {
   const { id: productId } = useParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [qty, setQty] = useState(10);
+  const [qty, setQty] = useState(1);
 
   const {
     data: product,
@@ -70,7 +70,7 @@ const ProductScreen = () => {
                 <Row>
                   <Col>Qty:</Col>
                 </Row>
-                <Row className="mt-1" style={{ width: "60px" }}>
+                <Row className="mt-1" style={{ width: "70px" }}>
                   <Col>
                     <Form.Control
                       as="select"
