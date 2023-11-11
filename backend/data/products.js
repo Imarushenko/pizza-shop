@@ -10,6 +10,7 @@ const products = [
     rating: 4.5,
     numOfReviews: 10,
     numReviews: 12,
+    countInStock: 10,
   },
   {
     name: "Pie with vegetables and cheese",
@@ -22,6 +23,7 @@ const products = [
     rating: 4.0,
     numOfReviews: 6,
     numReviews: 8,
+    countInStock: 8,
   },
   {
     name: "Pie with vegetables and vegan cheese",
@@ -34,6 +36,7 @@ const products = [
     rating: 3,
     numOfReviews: 4,
     numReviews: 12,
+    countInStock: 10,
   },
   {
     name: "Pizza with extra cheese, mushrooms and ham",
@@ -46,6 +49,7 @@ const products = [
     rating: 5,
     numOfReviews: 14,
     numReviews: 12,
+    countInStock: 10,
   },
   {
     name: "Pizza with green olives, Tomatoes, corn and onions",
@@ -58,6 +62,7 @@ const products = [
     rating: 3.5,
     numOfReviews: 18,
     numReviews: 10,
+    countInStock: 20,
   },
   {
     name: "Our business meal includes Fries, homemade salad and Sambusak",
@@ -69,6 +74,7 @@ const products = [
     rating: 4,
     numOfReviews: 96,
     numReviews: 12,
+    countInStock: 0,
   },
 ];
 
