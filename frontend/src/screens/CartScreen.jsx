@@ -18,14 +18,17 @@ const CartScreen = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  // add to cart
   const addToCartHandler = async (product, qty) => {
     dispatch(addToCart({ ...product, qty }));
   };
 
+  // remove from cart
   const removeFromCartHandler = async (id) => {
     dispatch(removeFromCart(id));
   };
 
+  // checkout
   const checkoutHandler = () => {
     navigate("/login?redirect=/shipping");
   };
@@ -50,7 +53,11 @@ const CartScreen = () => {
                 key={item._id}
                 style={{ backgroundColor: "transparent" }}
               >
-                <Row>
+                <Row
+                  style={{ backgroundColor: "#f0f0f0" }}
+                  className="rounded p-1"
+                  as="card"
+                >
                   <Col md={2}>
                     <Image src={item.image} alt={item.name} fluid rounded />
                   </Col>

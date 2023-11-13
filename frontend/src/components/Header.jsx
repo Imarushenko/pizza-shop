@@ -9,14 +9,14 @@ const Header = () => {
   const { cartItems } = useSelector((state) => state.cart);
 
   return (
-    <header className="bg-black">
+    <>
       <Navbar expand="md" collapseOnSelect>
         <Container>
           <LinkContainer to="/">
             <Navbar.Brand>
               <img
                 src={logo}
-                height={100}
+                height={150}
                 alt="hapisga"
                 className="rounded rounded-2xl"
               />
@@ -27,7 +27,7 @@ const Header = () => {
             <Nav className="ms-auto">
               {/* cart */}
               <LinkContainer to="/cart">
-                <Nav.Link className="text-white">
+                <Nav.Link className="text-black fs-5">
                   <FaShoppingCart />
                   Cart
                   {cartItems.length > 0 && (
@@ -39,7 +39,7 @@ const Header = () => {
               </LinkContainer>
               {/* login */}
               <LinkContainer to="/login">
-                <Nav.Link className="text-white">
+                <Nav.Link className="text-black fs-5">
                   <FaUser />
                   Sign In
                 </Nav.Link>
@@ -48,7 +48,7 @@ const Header = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-    </header>
+    </>
   );
 };
 

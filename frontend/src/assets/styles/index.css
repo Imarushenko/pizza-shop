@@ -40,9 +40,20 @@ main {
   border-radius: 4px;
 }
 
+/* path */
+/* background-image: url('C:\develop\shop\frontend\src\assets\bg.jpeg'); */
+
 body {
-  background-color: #eadfd4;
+  background-image: url('C:\develop\shop\frontend\src\assets\bg-web-size.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0; /* Remove default body margin */
 }
+
+/* body {
+  background-color: rgb(11, 124, 54);
+} */
 
 .btn:hover {
   background-color: #555; /* Slightly lighter gray on hover */
@@ -50,7 +61,7 @@ body {
 }
 
 .restaurant-title {
-  font-family: 'Pacifico', cursive; /* Applying Pacifico font */
+  font-family: "Pacifico", cursive; /* Applying Pacifico font */
   color: #342838; /* Darker Purple as an example */
   text-align: left; /* Adjust to your desired alignment */
   font-size: 2.2rem; /* Slightly larger font size */
