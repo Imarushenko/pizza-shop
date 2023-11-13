@@ -26,7 +26,8 @@ main {
 
 /* more styling */
 .card {
-  background-color: #f0f0f0;
+   background: linear-gradient(to bottom, #ebe8e8, #216624);
+  color: #ffffff; /* Set text color to white */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -56,21 +57,20 @@ body {
 } */
 
 .btn:hover {
-  background-color: #555; /* Slightly lighter gray on hover */
+  background-color: #555;
   color: #ddd;
 }
 
 .restaurant-title {
-  font-family: "Pacifico", cursive; /* Applying Pacifico font */
-  color: #342838; /* Darker Purple as an example */
-  text-align: left; /* Adjust to your desired alignment */
-  font-size: 2.2rem; /* Slightly larger font size */
+  font-family: "Pacifico", cursive;
+  color: #342838;
+  text-align: left;
+  font-size: 2.2rem;
   margin: 20px 0;
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-weight: bold; /* Making the text bolder */
+  font-weight: bold;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  /* Adjust the color code, alignment, and other properties to your preference */
 }
 
 .link {

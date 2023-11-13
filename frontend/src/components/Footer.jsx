@@ -8,7 +8,7 @@ const Footer = () => {
     <footer>
       <Container>
         <Row>
-          <Col className="text-center py-3">
+          <Col className="text-right text-white">
             <p>Hapisga &copy; {currentYear} </p>
           </Col>
         </Row>

@@ -16,7 +16,7 @@ const Header = () => {
             <Navbar.Brand>
               <img
                 src={logo}
-                height={150}
+                height={135}
                 alt="hapisga"
                 className="rounded rounded-2xl"
               />
@@ -24,7 +24,7 @@ const Header = () => {
           </LinkContainer>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto">
+            <Nav className="ms-auto bg-white rounded p-2 border border-dark">
               {/* cart */}
               <LinkContainer to="/cart">
                 <Nav.Link className="text-black fs-5">
