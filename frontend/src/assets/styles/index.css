@@ -26,9 +26,8 @@ main {
 
 /* more styling */
 .card {
-   background: linear-gradient(to bottom, #ebe8e8, #216624);
-  color: #ffffff; /* Set text color to white */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(to bottom, #ebe8e8, #216624);
+  color: #ffffff;
 }
 
 .btn {
@@ -45,7 +44,7 @@ main {
 /* background-image: url('C:\develop\shop\frontend\src\assets\bg.jpeg'); */
 
 body {
-  background-image: url('C:\develop\shop\frontend\src\assets\bg-web-size.jpeg');
+  background-image: url("C:\develop\shop\frontend\src\assets\bg-web-size.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
