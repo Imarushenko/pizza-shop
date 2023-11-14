@@ -65,10 +65,10 @@ const ProductScreen = () => {
               </ListGroup.Item>
               <ListGroup.Item>{product.description}</ListGroup.Item>
             </ListGroup>
-            {product.isInStock === true && (
+            {(product.isInStock === true && product.countInStock > 0) && (
               <ListGroup.Item className="mt-2">
                 <Row>
-                  <Col>Qty:</Col>
+                  <Col className="text-white">Qty:</Col>
                 </Row>
                 <Row className="mt-1" style={{ width: "70px" }}>
                   <Col>
@@ -93,7 +93,9 @@ const ProductScreen = () => {
               <Button
                 className="btn"
                 type="button"
-                disabled={product.isInStock === false}
+                disabled={
+                  product.isInStock === false || product.countInStock < 1
+                }
                 onClick={addToCartHandler}
               >
                 Add To Cart

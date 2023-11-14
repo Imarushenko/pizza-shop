@@ -45,7 +45,7 @@ const products = [
       "A delicious pizza with Ham, extra cheese & Mushrooms baked in our local pizzeria",
     category: "Pizza",
     price: 79.99,
-    isInStock: true,
+    isInStock: false,
     rating: 5,
     numOfReviews: 14,
     numReviews: 12,
