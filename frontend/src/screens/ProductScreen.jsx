@@ -57,7 +57,7 @@ const ProductScreen = () => {
                   text={`${product.numOfReviews} Reviews`}
                 />
               </ListGroup.Item>
-              <ListGroup.Item>Price: {product.price}</ListGroup.Item>
+              <ListGroup.Item>Price: ₪{product.price}</ListGroup.Item>
               <ListGroup.Item>
                 {product.isInStock === true
                   ? "Available"

@@ -7,7 +7,7 @@ main {
 }
 
 .rating svg {
-  color: #f8e825;
+  color: #d3c313;
 }
 
 .rating-text {
@@ -17,10 +17,10 @@ main {
 }
 
 .product-title {
-  height: 2.5em; /* Set a fixed height */
-  overflow: hidden; /* Hide overflow content */
-  text-overflow: ellipsis; /* Add ellipsis for long text */
-  white-space: nowrap; /* Prevent wrapping */
+  height: 2.5em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   color: black;
 }
 
@@ -40,36 +40,17 @@ main {
   border-radius: 4px;
 }
 
-/* path */
-/* background-image: url('C:\develop\shop\frontend\src\assets\bg.jpeg'); */
-
 body {
   background-image: url("C:\develop\shop\frontend\src\assets\bg-web-size.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  margin: 0; /* Remove default body margin */
+  margin: 0;
 }
-
-/* body {
-  background-color: rgb(11, 124, 54);
-} */
 
 .btn:hover {
   background-color: #555;
   color: #ddd;
-}
-
-.restaurant-title {
-  font-family: "Pacifico", cursive;
-  color: #342838;
-  text-align: left;
-  font-size: 2.2rem;
-  margin: 20px 0;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: bold;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .link {
