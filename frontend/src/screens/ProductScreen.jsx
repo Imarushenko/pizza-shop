@@ -59,13 +59,13 @@ const ProductScreen = () => {
               </ListGroup.Item>
               <ListGroup.Item>Price: ₪{product.price}</ListGroup.Item>
               <ListGroup.Item>
-                {product.isInStock === true
+                {product.countInStock > 1
                   ? "Available"
                   : "Temporary Not Available"}
               </ListGroup.Item>
               <ListGroup.Item>{product.description}</ListGroup.Item>
             </ListGroup>
-            {(product.isInStock === true && product.countInStock > 0) && (
+            {product.countInStock > 0 && (
               <ListGroup.Item className="mt-2">
                 <Row>
                   <Col className="text-white">Qty:</Col>
@@ -93,9 +93,7 @@ const ProductScreen = () => {
               <Button
                 className="btn"
                 type="button"
-                disabled={
-                  product.isInStock === false || product.countInStock < 1
-                }
+                disabled={product.countInStock < 1}
                 onClick={addToCartHandler}
               >
                 Add To Cart
