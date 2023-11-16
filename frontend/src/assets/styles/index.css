@@ -25,6 +25,26 @@ main {
 }
 
 /* more styling */
+.category-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px; /* Increased margin for better spacing */
+}
+
+.category-tab {
+  padding: 10px;
+  border-radius: 10px; /* Increased border-radius for rounded corners */
+  background-color: #f0f0f0;
+  color: black;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out; /* Smooth transition effect */
+}
+
+.category-tab.active {
+  background-color: rgb(159, 150, 150);
+}
+
 .card {
   background: linear-gradient(to bottom, #ebe8e8, #216624);
   color: #ffffff;

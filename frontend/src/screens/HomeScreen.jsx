@@ -1,5 +1,8 @@
+// frontend/homepagescreen.js
 import React from "react";
 import { Col, Row } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
+import { setCategory } from "../slices/categorySlice";
 import Product from "../components/Product";
 import { useGetProductsQuery } from "../slices/productsApiSlice";
 import Loader from "../components/Loader";
@@ -7,9 +10,32 @@ import Message from "../components/Message";
 
 const HomeScreen = () => {
   const { data: products, isLoading, error } = useGetProductsQuery();
+  const dispatch = useDispatch();
+  const selectedCategory = useSelector((state) => state.category);
+
+  const handleCategoryChange = (category) => {
+    dispatch(setCategory(category));
+  };
 
   return (
     <>
+      {/* Add category tabs */}
+      <div className="category-tabs">
+        {["Pizza", "Salad", "Pie", "Other"].map((category) => (
+          <div
+            key={category}
+            className={`category-tab ${
+              selectedCategory.toLowerCase() === category.toLowerCase()
+                ? "active"
+                : ""
+            }`}
+            onClick={() => handleCategoryChange(category)}
+          >
+            {category}
+          </div>
+        ))}
+      </div>
+
       {isLoading ? (
         <Loader />
       ) : error ? (
@@ -18,15 +44,18 @@ const HomeScreen = () => {
         </Message>
       ) : (
         <>
-          {/* <h1 className="restaurant-title">
-            Hapisga: Where Every Slice Tells a Story
-          </h1> */}
           <Row>
-            {products.map((product) => (
-              <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
-                <Product product={product} />
-              </Col>
-            ))}
+            {products
+              .filter(
+                (product) =>
+                  product.category.toLowerCase() ===
+                  selectedCategory.toLowerCase()
+              )
+              .map((product) => (
+                <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
+                  <Product product={product} />
+                </Col>
+              ))}
           </Row>
         </>
       )}

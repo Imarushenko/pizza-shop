@@ -71,6 +71,17 @@ const products = [
     numReviews: 12,
     countInStock: 0,
   },
+  {
+    name: "Our business meal includes Fries, homemade salad and Sambusak",
+    image: "/images/pizza6.jpeg",
+    description: "Enjoy our local and traditional food made with love",
+    category: "Salad",
+    price: 49.99,
+    rating: 4,
+    numOfReviews: 96,
+    numReviews: 12,
+    countInStock: 0,
+  },
 ];
 
 export default products;
