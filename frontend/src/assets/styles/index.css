@@ -25,6 +25,10 @@ main {
 }
 
 /* more styling */
+.bg {
+  background: linear-gradient(to right, #67ab5d, #d7c4c4);
+}
+
 .category-tabs {
   display: flex;
   gap: 10px;

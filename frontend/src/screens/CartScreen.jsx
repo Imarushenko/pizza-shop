@@ -54,8 +54,8 @@ const CartScreen = () => {
                 style={{ backgroundColor: "transparent" }}
               >
                 <Row
-                  style={{ backgroundColor: "#f0f0f0" }}
-                  className="rounded p-1"
+                  // style={{ backgroundColor: "#f0f0f0" }}
+                  className="rounded p-1 bg"
                   as="card"
                 >
                   <Col md={2}>
@@ -66,7 +66,7 @@ const CartScreen = () => {
                       {item.name}
                     </Link>
                   </Col>
-                  <Col md={2}>{item.price}</Col>
+                  <Col md={2}>₪{item.price}</Col>
                   <Col md={2}>
                     <Form.Control
                       as="select"
