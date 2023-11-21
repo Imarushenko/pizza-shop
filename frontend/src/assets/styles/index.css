@@ -36,17 +36,17 @@ main {
 .category-tabs {
   display: flex;
   gap: 10px;
-  margin-bottom: 20px; /* Increased margin for better spacing */
+  margin-bottom: 20px;
 }
 
 .category-tab {
   padding: 10px;
-  border-radius: 10px; /* Increased border-radius for rounded corners */
+  border-radius: 10px;
   background-color: #f0f0f0;
   color: black;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s ease-in-out; /* Smooth transition effect */
+  transition: background-color 0.3s ease-in-out;
 }
 
 .category-tab.active {
@@ -54,6 +54,7 @@ main {
 }
 
 .card {
+  /* background-image: url("C:\develop\shop\frontend\src\assets\card-bg.jpg"); */
   background: linear-gradient(45deg, #4CAF50, #45a049);
   border-radius: 10px;
   padding: 20px;
