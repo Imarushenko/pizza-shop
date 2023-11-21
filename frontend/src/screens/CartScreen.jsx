@@ -2,15 +2,7 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { FaTrash } from "react-icons/fa";
-import {
-  Row,
-  Col,
-  ListGroup,
-  Image,
-  Form,
-  Button,
-  Card,
-} from "react-bootstrap";
+import { Row, Col, ListGroup, Image, Form, Button } from "react-bootstrap";
 import Message from "../components/Message";
 import { addToCart, removeFromCart } from "../slices/cartSlice";
 
@@ -53,11 +45,7 @@ const CartScreen = () => {
                 key={item._id}
                 style={{ backgroundColor: "transparent" }}
               >
-                <Row
-                  // style={{ backgroundColor: "#f0f0f0" }}
-                  className="rounded p-1 bg"
-                  as="card"
-                >
+                <Row className="rounded p-1 bg" as="card">
                   <Col md={2}>
                     <Image src={item.image} alt={item.name} fluid rounded />
                   </Col>
@@ -97,8 +85,8 @@ const CartScreen = () => {
         )}
       </Col>
       <Col md={4}>
-        <Card>
-          <ListGroup variant="flush">
+        <div className="p-2">
+          <ListGroup variant="flush" className="rounded border border-dark">
             <ListGroup.Item>
               <h2>
                 Subtotal ({cartItems.reduce((acc, item) => acc + item.qty, 0)})
@@ -118,7 +106,7 @@ const CartScreen = () => {
               </Button>
             </ListGroup.Item>
           </ListGroup>
-        </Card>
+        </div>
       </Col>
     </Row>
   );

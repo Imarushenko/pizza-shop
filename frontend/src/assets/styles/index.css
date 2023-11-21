@@ -26,7 +26,11 @@ main {
 
 /* more styling */
 .bg {
-  background: linear-gradient(to right, #67ab5d, #d7c4c4);
+  background: linear-gradient(45deg, #4CAF50, #45a049);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: #fff;
 }
 
 .category-tabs {
@@ -50,8 +54,11 @@ main {
 }
 
 .card {
-  background: linear-gradient(to bottom, #ebe8e8, #216624);
-  color: #ffffff;
+  background: linear-gradient(45deg, #4CAF50, #45a049);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: #fff;
 }
 
 .btn {
