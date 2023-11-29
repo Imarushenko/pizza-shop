@@ -17,16 +17,23 @@ main {
 }
 
 .product-title {
-  height: 2.5em;
+  height: 1.5em;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  color: black;
+  color: white;
+  font-weight: 300;
 }
 
 /* more styling */
 .bg {
-  background: linear-gradient(45deg, #4CAF50, #45a049);
+  background: linear-gradient(
+    135deg,
+    #3f3c3c 0%,
+    #474545 50%,
+    #4caf50 50%,
+    #2f2d2d 100%
+  );
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -54,8 +61,14 @@ main {
 }
 
 .card {
-  /* background-image: url("C:\develop\shop\frontend\src\assets\card-bg.jpg"); */
-  background: linear-gradient(to bottom, #4CAF50, #45A145, #3B8E3B);
+  /* background: linear-gradient(45deg, #4CAF50 50%, #808080 50%); */
+  background: linear-gradient(
+    135deg,
+    #3f3c3c 0%,
+    #474545 50%,
+    #4caf50 50%,
+    #2f2d2d 100%
+  );
   border-radius: 10px;
   border-width: 1px;
   border-color: black;
@@ -63,13 +76,19 @@ main {
 }
 
 .btn {
-  background-color: #333;
-  color: #fff;
-  border: none;
+  display: inline-block;
   padding: 10px 20px;
-  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  background-color: #808080; /* Medium gray color */
+  color: #fff; /* White text */
+  border-radius: 5px;
   transition: background-color 0.3s ease-in-out;
-  border-radius: 4px;
+}
+
+.btn:hover {
+  background-color: #505050;
 }
 
 body {
@@ -78,11 +97,6 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   margin: 0;
-}
-
-.btn:hover {
-  background-color: #555;
-  color: #ddd;
 }
 
 .link {

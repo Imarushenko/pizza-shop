@@ -72,6 +72,11 @@ const CartScreen = () => {
                   </Col>
                   <Col md={2}>
                     <Button
+                      style={{
+                        backgroundColor: "transparent",
+                        padding: "0",
+                        color: "#EBEDEF",
+                      }}
                       type="button"
                       onClick={() => removeFromCartHandler(item._id)}
                     >
@@ -92,7 +97,7 @@ const CartScreen = () => {
                 Subtotal ({cartItems.reduce((acc, item) => acc + item.qty, 0)})
                 items
               </h2>
-              {cartItems
+              ₪{cartItems
                 .reduce((acc, item) => acc + item.qty * item.price, 0)
                 .toFixed(2)}
             </ListGroup.Item>
