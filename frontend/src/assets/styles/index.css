@@ -55,10 +55,10 @@ main {
 
 .card {
   /* background-image: url("C:\develop\shop\frontend\src\assets\card-bg.jpg"); */
-  background: linear-gradient(45deg, #4CAF50, #45a049);
+  background: linear-gradient(to bottom, #4CAF50, #45A145, #3B8E3B);
   border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-width: 1px;
+  border-color: black;
   color: #fff;
 }
 
