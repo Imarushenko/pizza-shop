@@ -48,16 +48,22 @@ main {
 
 .category-tab {
   padding: 10px;
-  border-radius: 10px;
-  background-color: #f0f0f0;
-  color: black;
-  font-weight: 600;
+  font-weight: 500;
+  border: 1px solid #ddd;
+  border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
+  background-color: #f5f5f5;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.category-tab:hover {
+  background-color: #b2aaaa;
+  color: #333;
 }
 
 .category-tab.active {
-  background-color: rgb(159, 150, 150);
+  background-color: #8d9396;
+  color: #070707;
 }
 
 .card {
