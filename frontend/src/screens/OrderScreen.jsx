@@ -1,14 +1,6 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
-import {
-  Row,
-  Col,
-  ListGroup,
-  Image,
-  Form,
-  Button,
-  Card,
-} from "react-bootstrap";
+import { Row, Col, ListGroup, Image } from "react-bootstrap";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
 import { useGetOrderDetailsQuery } from "../slices/ordersApiSlice";
@@ -26,7 +18,12 @@ const OrderScreen = () => {
     <Message variant="danger" />
   ) : (
     <>
-      <h1>Order {order._id}</h1>
+      <h4
+        className="text-white justify-content-center rounded-top p-1"
+        style={{ backgroundColor: "#85929E", marginTop: 0, marginBottom: 0 }}
+      >
+        Order Number: {order._id}
+      </h4>
       <Row>
         <Col md={8}>
           <ListGroup>

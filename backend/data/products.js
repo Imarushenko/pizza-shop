@@ -1,7 +1,7 @@
 const products = [
   {
     name: "Pizza with ham & mushrooms",
-    image: "/images/pizza1.jpeg",
+    image: "/images/pizza1.jpg",
     description:
       "A delicious pizza with Ham and Mushrooms baked in our local pizzeria",
     category: "Pizza",
@@ -13,10 +13,10 @@ const products = [
   },
   {
     name: "Pie with vegetables and cheese",
-    image: "/images/pizza2.jpeg",
+    image: "/images/pizza2.jpg",
     description:
       "Our legendary pie with vegetables and cheese with a secret and homemade recipe",
-    category: "Pie",
+    category: "Pizza",
     price: 49.99,
     rating: 4.0,
     numOfReviews: 6,
@@ -25,10 +25,10 @@ const products = [
   },
   {
     name: "Pie with vegetables and vegan cheese",
-    image: "/images/pizza3.jpeg",
+    image: "/images/pizza3.jpg",
     description:
       "Our legendary pie with vegetables and vegan cheese with a secret and homemade recipe",
-    category: "Pie",
+    category: "Pizza",
     price: 59.25,
     rating: 3,
     numOfReviews: 4,
@@ -37,10 +37,10 @@ const products = [
   },
   {
     name: "Pizza with extra cheese, mushrooms and ham",
-    image: "/images/pizza4.jpeg",
+    image: "/images/other1.jpg",
     description:
       "A delicious pizza with Ham, extra cheese & Mushrooms baked in our local pizzeria",
-    category: "Pizza",
+    category: "other",
     price: 79.99,
     rating: 5,
     numOfReviews: 14,
@@ -50,10 +50,10 @@ const products = [
 
   {
     name: "Pizza with green olives, Tomatoes, corn and onions",
-    image: "/images/pizza5.jpeg",
+    image: "/images/other2.jpg",
     description:
       "Have a great pizza with green olives, Tomatoes, corn and onions made in our traditionally kitchen",
-    category: "Pizza",
+    category: "other",
     price: 49.99,
     rating: 3.5,
     numOfReviews: 18,
@@ -62,7 +62,7 @@ const products = [
   },
   {
     name: "Our business meal includes Fries, homemade salad and Sambusak",
-    image: "/images/pizza6.jpeg",
+    image: "/images/other3.jpg",
     description: "Enjoy our local and traditional food made with love",
     category: "Other",
     price: 49.99,
@@ -73,9 +73,9 @@ const products = [
   },
   {
     name: "Our business meal includes Fries, homemade salad and Sambusak",
-    image: "/images/pizza6.jpeg",
+    image: "/images/other4.jpg",
     description: "Enjoy our local and traditional food made with love",
-    category: "Salad",
+    category: "other",
     price: 49.99,
     rating: 4,
     numOfReviews: 96,
