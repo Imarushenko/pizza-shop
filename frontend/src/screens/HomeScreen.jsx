@@ -21,7 +21,7 @@ const HomeScreen = () => {
     <>
       {/* Add category tabs */}
       <div className="category-tabs">
-        {["Pizza", "Salad", "Pie", "Other"].map((category) => (
+        {["Pizza", "Salad", "Sambusak", "Specials"].map((category) => (
           <div
             key={category}
             className={`category-tab ${
