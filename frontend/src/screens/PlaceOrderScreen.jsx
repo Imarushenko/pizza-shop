@@ -43,7 +43,7 @@ const PlaceOrderScreen = () => {
         taxPrice: cart.taxPrice,
         totalPrice: cart.totalPrice,
       }).unwrap();
-      dispatch(clearCartItems);
+      dispatch(clearCartItems());
       navigate(`/order/${res._id}`);
     } catch (error) {
       toast.error(error);
