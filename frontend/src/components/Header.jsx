@@ -46,7 +46,10 @@ const Header = () => {
             <Nav className="ms-auto bg-white rounded p-2 border border-dark">
               {/* cart */}
               <LinkContainer to="/cart">
-                <Nav.Link className="text-black fs-5">
+                <Nav.Link
+                  className="text-black fs-5"
+                  style={{ fontWeight: "500" }}
+                >
                   <FaShoppingCart />
                   Cart
                   {cartItems.length > 0 && (
@@ -62,6 +65,7 @@ const Header = () => {
                   title={userInfo.name}
                   id="username"
                   className="text-black fs-5"
+                  style={{ fontWeight: "500" }}
                 >
                   <LinkContainer to="/profile">
                     <NavDropdown.Item>Profile</NavDropdown.Item>
@@ -72,11 +76,35 @@ const Header = () => {
                 </NavDropdown>
               ) : (
                 <LinkContainer to="/login">
-                  <Nav.Link className="text-black fs-5">
+                  <Nav.Link
+                    className="text-black fs-5"
+                    style={{ fontWeight: "500" }}
+                  >
                     <FaUser />
                     Sign In
                   </Nav.Link>
                 </LinkContainer>
+              )}
+              {/* admin */}
+              {userInfo && userInfo.isAdmin && (
+                <NavDropdown
+                  title="Admin"
+                  id="adminmenu"
+                  className="fs-5 text-black"
+                  style={{ fontWeight: "500" }}
+                >
+                  <LinkContainer to="/admin/productlist">
+                    <NavDropdown.Item>Products</NavDropdown.Item>
+                  </LinkContainer>
+
+                  <LinkContainer to="/admin/userlist">
+                    <NavDropdown.Item>Users</NavDropdown.Item>
+                  </LinkContainer>
+
+                  <LinkContainer to="/admin/orderlist">
+                    <NavDropdown.Item>Orders</NavDropdown.Item>
+                  </LinkContainer>
+                </NavDropdown>
               )}
             </Nav>
           </Navbar.Collapse>
