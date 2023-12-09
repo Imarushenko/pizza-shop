@@ -1,6 +1,6 @@
 import React from "react";
 import { LinkContainer } from "react-router-bootstrap";
-import { Table, Button } from "react-bootstrap";
+import { Table } from "react-bootstrap";
 import { FaTimes } from "react-icons/fa";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
@@ -10,14 +10,14 @@ const OrderListScreen = () => {
   const { data: orders, isLoading, error } = useGetOrdersQuery();
 
   return (
-    <div className="bg rounded">
+    <div className="bg-admin rounded">
       <h2>Orders</h2>
       {isLoading ? (
         <Loader />
       ) : error ? (
         <Message variant="danger">{error}</Message>
       ) : (
-        <Table striped bordered hover responsive className="table-sm">
+        <Table striped bordered hover responsive className="table">
           <thead>
             <tr>
               <th>ID</th>
@@ -52,9 +52,9 @@ const OrderListScreen = () => {
                 </td>
                 <td>
                   <LinkContainer to={`/order/${order._id}`}>
-                    <Button variant="light" className="btn-sm">
+                    <h6 type="button" variant="light" className="btn-sm">
                       Details
-                    </Button>
+                    </h6>
                   </LinkContainer>
                 </td>
               </tr>
