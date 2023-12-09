@@ -4,13 +4,30 @@ import { Table, Button, Row, Col } from "react-bootstrap";
 import { FaTimes, FaEdit, FaTrash } from "react-icons/fa";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
-import { useGetProductsQuery } from "../slices/productsApiSlice";
+import {
+  useGetProductsQuery,
+  useCreateProductMutation,
+} from "../slices/productsApiSlice";
+import { toast } from "react-toastify";
 
 const ProductListScreen = () => {
-  const { data: products, isLoading, error } = useGetProductsQuery();
+  const { data: products, isLoading, error, refetch } = useGetProductsQuery();
+  const [createProduct, { isLoading: loadingCreate }] =
+    useCreateProductMutation();
 
   const deleteHandler = (id) => {
     console.log("delete", id);
+  };
+
+  const createProductHandler = async () => {
+    if (window.confirm("Are you sure you want to create a new product?")) {
+      try {
+        await createProduct();
+        refetch();
+      } catch (err) {
+        toast.error(err?.data?.message || err.error);
+      }
+    }
   };
   return (
     <div className="bg-admin rounded">
@@ -19,11 +36,12 @@ const ProductListScreen = () => {
           <h2>Products</h2>
         </Col>
         <Col className="text-end">
-          <Button className="btn-sm m-2">
+          <Button className="btn-sm m-2" onClick={createProductHandler}>
             <FaEdit size={18} className="m-1" /> Create Product
           </Button>
         </Col>
       </Row>
+      {loadingCreate && <Loader />}
       {isLoading ? (
         <Loader />
       ) : error ? (
