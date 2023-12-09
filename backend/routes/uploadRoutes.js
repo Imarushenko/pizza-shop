@@ -7,7 +7,7 @@ const router = express.Router();
 // whare to upload the image - can be also a remote s
 const storage = multer.diskStorage({
   destination(req, file, cb) {
-    cb(null, " uploads/");
+    cb(null, "uploads/");
   },
   filename(req, file, cb) {
     cb(
