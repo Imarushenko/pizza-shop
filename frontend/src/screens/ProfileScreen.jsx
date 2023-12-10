@@ -122,6 +122,7 @@ const ProfileScreen = () => {
                   <td>TOTAL</td>
                   <td>PAID</td>
                   <td>DELIVERED</td>
+                  <td></td>
                 </tr>
               </thead>
               <tbody>
@@ -145,9 +146,11 @@ const ProfileScreen = () => {
                       )}
                     </td>
                     <td>
-                        <LinkContainer to={`/order/${order._id}`}>
-                            <Button className="btn-sm">Details</Button>
-                        </LinkContainer>
+                      <LinkContainer to={`/order/${order._id}`}>
+                        <h6 type="button" className="btn-sm">
+                          Details
+                        </h6>
+                      </LinkContainer>
                     </td>
                   </tr>
                 ))}
