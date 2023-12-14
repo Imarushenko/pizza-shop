@@ -3,8 +3,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { FaTrash } from "react-icons/fa";
 import { Row, Col, ListGroup, Image, Form, Button } from "react-bootstrap";
-import Message from "../components/Message";
+// import Message from "../components/Message";
 import { addToCart, removeFromCart } from "../slices/cartSlice";
+import emptyCartImage from "../assets/emptyCart.png";
 
 const CartScreen = () => {
   const navigate = useNavigate();
@@ -32,12 +33,20 @@ const CartScreen = () => {
       <Col md={8}>
         {/* <h1 style={{ marginBottom: "20px" }}>Shopping Cart</h1> */}
         {cartItems.length === 0 ? (
-          <Message>
-            Your cart is empty{" "}
-            <Link to="/" className="btn">
-              Go Back
-            </Link>
-          </Message>
+          <Row>
+            <Col md={3}>
+              <Link to="/" className="btn my-2">
+                Go Back
+              </Link>
+            </Col>
+            <Col md={10}>
+              <Image
+                src={emptyCartImage}
+                className="rounded"
+                style={{ width: "500px", backgroundColor: "#FFFBE9" }}
+              />
+            </Col>
+          </Row>
         ) : (
           <ListGroup variant="flush">
             {cartItems.map((item) => (
