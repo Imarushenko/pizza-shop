@@ -29,7 +29,7 @@ const ProductEditScreen = () => {
     error,
   } = useGetProductDetailsQuery(productId);
 
-  const [updateProduct, { isLoading: laodingUpdate }] =
+  const [updateProduct, { isLoading: loadingUpdate }] =
     useUpdateProductMutation();
 
   const [uploadProductImage, { isLoading: loadingUpload }] =
@@ -88,11 +88,13 @@ const ProductEditScreen = () => {
       </Link>
       <FormContainer>
         <h2>Edit Product</h2>
-        {laodingUpdate && <Loader />}
+        {loadingUpdate && <Loader />}
         {isLoading ? (
           <Loader />
         ) : error ? (
-          <Message variant="danger"></Message>
+          <Message variant="danger">
+            {error?.data?.message || error.error}
+          </Message>
         ) : (
           <Form onSubmit={submitHandler}>
             <Form.Group controlId="name" className="my-2">
