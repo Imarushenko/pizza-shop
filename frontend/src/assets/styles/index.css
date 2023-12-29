@@ -187,6 +187,19 @@ table th {
   background: rgba(0, 0, 0, 0.5);
 }
 
+/* sticky header */
+.sticky-top {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: transparent;
+  transition: background-color 1s ease;
+}
+
+.sticky-top.scrolled {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
 /* table */
 .table {
   width: 100%;

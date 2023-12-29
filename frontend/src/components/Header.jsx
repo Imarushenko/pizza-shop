@@ -1,4 +1,4 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import { Navbar, Nav, Container, Badge, NavDropdown } from "react-bootstrap";
 import { FaShoppingCart, FaUser } from "react-icons/fa";
 import logo from "../assets/newlogo.jpeg";
@@ -7,8 +7,11 @@ import { useSelector, useDispatch } from "react-redux";
 import { useLogoutMutation } from "../slices/usersApiSlice";
 import { logout } from "../slices/authSlice";
 import { useNavigate } from "react-router-dom";
+import SearchBox from "./SearchBox";
 
 const Header = () => {
+  const [isScrolledDown, setIsScrolledDown] = useState(false);
+
   const { cartItems } = useSelector((state) => state.cart);
   const { userInfo } = useSelector((state) => state.auth);
 
@@ -16,6 +19,25 @@ const Header = () => {
   const dispatch = useDispatch();
 
   const [logoutApiCall] = useLogoutMutation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+
+      // You can adjust the threshold as needed
+      const scrollThreshold = 50;
+
+      setIsScrolledDown(scrollTop > scrollThreshold);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const headerClass = isScrolledDown ? "sticky-top scrolled" : "sticky-top";
 
   const logoutHandler = async () => {
     try {
@@ -29,7 +51,7 @@ const Header = () => {
 
   return (
     <>
-      <Navbar expand="md" collapseOnSelect>
+      <Navbar expand="md" collapseOnSelect className={headerClass}>
         <Container>
           <LinkContainer to="/">
             <Navbar.Brand>
@@ -44,6 +66,8 @@ const Header = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto bg-white rounded p-2 border border-dark">
+              {/* search box */}
+              <SearchBox />
               {/* cart */}
               <LinkContainer to="/cart">
                 <Nav.Link
