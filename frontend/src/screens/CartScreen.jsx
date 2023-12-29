@@ -11,6 +11,8 @@ const CartScreen = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  const { userInfo } = useSelector((state) => state.auth);
+
   // add to cart
   const addToCartHandler = async (product, qty) => {
     dispatch(addToCart({ ...product, qty }));
@@ -34,17 +36,33 @@ const CartScreen = () => {
         {/* <h1 style={{ marginBottom: "20px" }}>Shopping Cart</h1> */}
         {cartItems.length === 0 ? (
           <Row>
-            <Col md={3}>
-              <Link to="/" className="btn my-2">
-                Go Back
-              </Link>
-            </Col>
-            <Col md={10}>
-              <Image
-                src={emptyCartImage}
-                className="rounded"
-                style={{ width: "500px", backgroundColor: "#FFFBE9" }}
-              />
+            <Col md={10} className="position-relative">
+              <div
+                style={{
+                  position: "relative",
+                  width: "500px",
+                  backgroundColor: "#FFFBE9",
+                }}
+              >
+                <Image
+                  src={emptyCartImage}
+                  style={{ width: "100%", height: "100%" }}
+                />
+                {!userInfo ? (
+                  <div className="position-absolute bottom-0 end-0 p-2">
+                    <span className="me-2">Hey there!</span>
+                    <Link to="/login" className="text-decoration-none me-2">
+                      Login
+                    </Link>
+                    <span>/</span>
+                    <Link to="/register" className="text-decoration-none ms-2">
+                      Register
+                    </Link>
+                  </div>
+                ) : (
+                  <></>
+                )}
+              </div>
             </Col>
           </Row>
         ) : (
