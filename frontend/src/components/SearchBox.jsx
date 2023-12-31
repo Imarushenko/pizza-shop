@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Button, Form } from "react-bootstrap";
+import React, { useState } from "react";
+import { Form } from "react-bootstrap";
 import { useParams, useNavigate } from "react-router-dom";
 
 const SearchBox = () => {
@@ -18,32 +18,16 @@ const SearchBox = () => {
   };
 
   return (
-    <Form onSubmit={submitHandler} className="d-flex">
+    <Form onSubmit={submitHandler} className="search-box">
       <Form.Control
         type="text"
         name="q"
         onChange={(e) => setKeyword(e.target.value)}
         value={keyword}
         placeholder="Search Products..."
-        className="mr-sm-2 mk-sm-5"
-      ></Form.Control>
-      <button
-        type="submit"
-        className="p-2 mx-2 rounded"
-        style={{
-          padding: "8px 16px",
-          margin: "0 8px",
-          border: "2px solid #cccccc",
-          borderRadius: "8px",
-          color: "#28a745",
-          backgroundColor: "transparent",
-          cursor: "pointer",
-          transition:
-            "background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out",
-        }}
-        onMouseOver={(e) => (e.currentTarget.style.borderColor = "#aaaaaa")}
-        onMouseOut={(e) => (e.currentTarget.style.borderColor = "#cccccc")}
-      >
+        className="search-input"
+      />
+      <button type="submit" className="search-button">
         Search
       </button>
     </Form>

@@ -178,6 +178,7 @@ table th {
   margin-top: 10px;
 }
 
+/* carousel */
 .carousel-caption {
   position: absolute;
   width: 100%;
@@ -185,6 +186,10 @@ table th {
   right: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.5);
+}
+
+.bg-transparent-dark {
+  background: rgba(0, 0, 0, 0.3);
 }
 
 /* sticky header */
@@ -241,4 +246,30 @@ table th {
 .table button:hover {
   background-color: #007bff;
   color: #fff;
+}
+
+/* search box */
+.search-box {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  margin-right: 5px;
+}
+
+.search-button {
+  padding: 8px 16px;
+  margin: 0 8px;
+  border: 2px solid #cccccc;
+  border-radius: 8px;
+  color: #28a745;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
+    border-color 0.3s ease-in-out;
+}
+
+.search-button:hover {
+  border-color: #1e1b1b;
 }

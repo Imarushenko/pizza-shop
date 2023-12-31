@@ -5,11 +5,11 @@ const Footer = () => {
   // get the year function
   const currentYear = new Date().getFullYear();
   return (
-    <footer>
+    <footer style={{ background: "rgba(0, 0, 0, 0.7)" }}>
       <Container>
         <Row>
-          <Col className="text-right text-white">
-            <p>Hapisga &copy; {currentYear} </p>
+          <Col className="text-center text-white">
+            <p className="mt-3">Hapisga &copy; {currentYear} </p>
           </Col>
         </Row>
       </Container>
