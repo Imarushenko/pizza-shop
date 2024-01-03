@@ -23,8 +23,6 @@ const Header = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-
-      // You can adjust the threshold as needed
       const scrollThreshold = 50;
 
       setIsScrolledDown(scrollTop > scrollThreshold);
@@ -51,7 +49,11 @@ const Header = () => {
 
   return (
     <>
-      <Navbar expand="md" collapseOnSelect className={headerClass}>
+      <Navbar
+        expand="md"
+        collapseOnSelect
+        className={`${headerClass} custom-navbar`}
+      >
         <Container>
           <LinkContainer to="/">
             <Navbar.Brand>
@@ -65,15 +67,12 @@ const Header = () => {
           </LinkContainer>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto bg-white rounded p-2 border border-dark">
+            <Nav className="ms-auto">
               {/* search box */}
               <SearchBox />
               {/* cart */}
               <LinkContainer to="/cart">
-                <Nav.Link
-                  className="text-black fs-5"
-                  style={{ fontWeight: "500" }}
-                >
+                <Nav.Link className="nav-link-text">
                   <FaShoppingCart />
                   Cart
                   {cartItems.length > 0 && (
@@ -86,10 +85,11 @@ const Header = () => {
               {/* user info, login, logout */}
               {userInfo ? (
                 <NavDropdown
-                  title={userInfo.name}
+                  title={
+                    <span style={{ color: "white" }}>{userInfo.name}</span>
+                  }
                   id="username"
-                  className="text-black fs-5"
-                  style={{ fontWeight: "500" }}
+                  className="nav-link-text"
                 >
                   <LinkContainer to="/profile">
                     <NavDropdown.Item>Profile</NavDropdown.Item>
@@ -100,10 +100,7 @@ const Header = () => {
                 </NavDropdown>
               ) : (
                 <LinkContainer to="/login">
-                  <Nav.Link
-                    className="text-black fs-5"
-                    style={{ fontWeight: "500" }}
-                  >
+                  <Nav.Link className="nav-link-text">
                     <FaUser />
                     Sign In
                   </Nav.Link>
@@ -112,10 +109,9 @@ const Header = () => {
               {/* admin */}
               {userInfo && userInfo.isAdmin && (
                 <NavDropdown
-                  title="Admin"
+                  title={<span style={{ color: "white" }}>Admin</span>}
                   id="adminmenu"
-                  className="fs-5 text-black"
-                  style={{ fontWeight: "500" }}
+                  className="nav-link-text"
                 >
                   <LinkContainer to="/admin/productlist">
                     <NavDropdown.Item>Products</NavDropdown.Item>
