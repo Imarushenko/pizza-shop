@@ -6,6 +6,7 @@ import Loader from "../components/Loader";
 import Message from "../components/Message";
 import Paginate from "../components/Paginate";
 import ProductCarousel from "../components/ProductCarousel";
+import Meta from "../components/Meta";
 
 const HomeScreen = () => {
   const { pageNumber, keyword } = useParams();
@@ -32,6 +33,8 @@ const HomeScreen = () => {
         </Message>
       ) : (
         <>
+          {/* the title of the page component */}
+          <Meta title="Hapisga - Sambusk" />
           <Row>
             {data.products.map((product) => (
               <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
