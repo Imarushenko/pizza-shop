@@ -19,6 +19,7 @@ const UserListScreen = () => {
     if (window.confirm("Are you sure delete user?")) {
       try {
         await deleteUser(id);
+        refetch();
         toast.success("User deleted!");
         refetch();
       } catch (err) {

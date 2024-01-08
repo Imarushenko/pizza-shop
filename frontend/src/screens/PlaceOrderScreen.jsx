@@ -2,13 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import {
-  Button,
-  Row,
-  Col,
-  ListGroup,
-  Image,
-} from "react-bootstrap";
+import { Button, Row, Col, ListGroup, Image } from "react-bootstrap";
 import CheckoutSteps from "../components/CheckoutSteps";
 import { toast } from "react-toastify";
 import Message from "../components/Message";
@@ -146,7 +140,9 @@ const PlaceOrderScreen = () => {
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
-                {error && <Message variant="danger">{error}</Message>}
+                {error && (
+                  <Message variant="danger">{error.data.message}</Message>
+                )}
               </ListGroup.Item>
               <ListGroup.Item>
                 <Button

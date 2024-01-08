@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { Form, Button, FormGroup } from "react-bootstrap";
+import { Form, Button } from "react-bootstrap";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
 import FormContainer from "../components/FormContainer";
@@ -65,6 +65,7 @@ const ProductEditScreen = () => {
       toast.error(result.error);
     } else {
       toast.success("Product updated successfully!");
+      refetch();
       navigate("/admin/productlist");
     }
   };
@@ -166,6 +167,7 @@ const ProductEditScreen = () => {
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
               ></Form.Control>
+              {loadingUpload && <Loader />}
             </Form.Group>
 
             <Button type="submit" variant="primary" className="my-1">
