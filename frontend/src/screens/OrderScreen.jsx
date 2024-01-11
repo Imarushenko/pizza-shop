@@ -112,46 +112,46 @@ const OrderScreen = () => {
         className="text-white justify-content-center rounded-top p-1"
         style={{ backgroundColor: "#85929E", marginTop: 0, marginBottom: 0 }}
       >
-        Order Number: {order._id}
+        מספר הזמנה: {order._id}
       </h4>
       <Row>
         <Col md={8}>
           <ListGroup>
             <ListGroup.Item>
-              <h2>Shipping</h2>
+              <h2>משלוח</h2>
               <p>
-                <strong>Name:</strong> {order.user.name}
+                <strong>שם:</strong> {order.user.name}
               </p>
               <p>
-                <strong>Email:</strong> {order.user.email}
+                <strong>כתובת מייל:</strong> {order.user.email}
               </p>
               <p>
-                <strong>Address:</strong> {order.shippingAddress.address},{" "}
+                <strong>כתובת מגורים:</strong> {order.shippingAddress.address},{" "}
                 {order.shippingAddress.city}, {order.shippingAddress.country}
               </p>
               {order.isDelivered ? (
                 <Message variant="success">
-                  Delivered on {order.deliveredAt}
+                  נשלח ב {order.deliveredAt}
                 </Message>
               ) : (
-                <Message variant="danger">Not Delivered</Message>
+                <Message variant="danger">לא נשלח</Message>
               )}
             </ListGroup.Item>
 
             <ListGroup.Item>
-              <h2>Payment Method</h2>
+              <h2>שיטת משלוח</h2>
               <p>
-                <strong>Method:</strong> {order.paymentMethod}
+                <strong>באמצעות:</strong> {order.paymentMethod}
               </p>
               {order.isPaid ? (
-                <Message variant="success">Paid on {order.paidAt}</Message>
+                <Message variant="success">שולם ב {order.paidAt}</Message>
               ) : (
-                <Message variant="danger">Not Paid</Message>
+                <Message variant="danger">לא שולם</Message>
               )}
             </ListGroup.Item>
 
             <ListGroup.Item>
-              <h2>Order Items</h2>
+              <h2>פריטים בהזמנה</h2>
               {order.orderItems.map((item, index) => (
                 <ListGroup.Item key={index}>
                   <Row>
@@ -173,23 +173,23 @@ const OrderScreen = () => {
         <Col md={4}>
           <ListGroup>
             <ListGroup.Item>
-              <h2>Order Summary</h2>
+              <h2>סיכום הזמנה</h2>
             </ListGroup.Item>
             <ListGroup.Item>
               <Row>
-                <Col>Items</Col>
+                <Col>פריטים</Col>
                 <Col>₪{order.itemsPrice}</Col>
               </Row>
               <Row>
-                <Col>Shipping</Col>
+                <Col>משלוח</Col>
                 <Col>₪{order.shippingPrice}</Col>
               </Row>
               <Row>
-                <Col>Tax</Col>
+                <Col>מסים</Col>
                 <Col>₪{order.taxPrice}</Col>
               </Row>
               <Row>
-                <Col>Total</Col>
+                <Col>סה"כ</Col>
                 <Col>₪{order.totalPrice}</Col>
               </Row>
 
@@ -220,7 +220,7 @@ const OrderScreen = () => {
                       className="btn btn-block"
                       onClick={deliverOrderHandler}
                     >
-                      Mark as delivered
+                      סמן כנשלח
                     </Button>
                   </ListGroup.Item>
                 )}

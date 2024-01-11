@@ -56,11 +56,11 @@ const ProfileScreen = () => {
     <div className="bg rounded">
       <Row>
         <Col md={3}>
-          <h2>User Profile</h2>
+          <h2>פרופיל</h2>
 
           <Form onSubmit={submitHandler}>
             <Form.Group className="my-2" controlId="name">
-              <Form.Label>Name</Form.Label>
+              <Form.Label>שם</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Enter name"
@@ -70,7 +70,7 @@ const ProfileScreen = () => {
             </Form.Group>
 
             <Form.Group className="my-2" controlId="email">
-              <Form.Label>Email Address</Form.Label>
+              <Form.Label>כתובת מייל</Form.Label>
               <Form.Control
                 type="email"
                 placeholder="Enter email"
@@ -80,7 +80,7 @@ const ProfileScreen = () => {
             </Form.Group>
 
             <Form.Group className="my-2" controlId="password">
-              <Form.Label>Password</Form.Label>
+              <Form.Label>סיסמא</Form.Label>
               <Form.Control
                 type="password"
                 placeholder="Enter password"
@@ -90,7 +90,7 @@ const ProfileScreen = () => {
             </Form.Group>
 
             <Form.Group className="my-2" controlId="confirmPassword">
-              <Form.Label>Confirm Password</Form.Label>
+              <Form.Label>אשר סיסמא</Form.Label>
               <Form.Control
                 type="password"
                 placeholder="Confirm password"
@@ -100,13 +100,13 @@ const ProfileScreen = () => {
             </Form.Group>
 
             <Button className="my-1" type="submit">
-              Update
+              עדכן
             </Button>
             {loadingUpdateProfile && <Loader />}
           </Form>
         </Col>
         <Col md={9}>
-          <h2>My Orders</h2>
+          <h2>ההזמנות שלי</h2>
           {isLoading ? (
             <Loader />
           ) : error ? (
@@ -118,10 +118,10 @@ const ProfileScreen = () => {
               <thead>
                 <tr>
                   <td>ID</td>
-                  <td>DATE</td>
-                  <td>TOTAL</td>
-                  <td>PAID</td>
-                  <td>DELIVERED</td>
+                  <td>תאריך</td>
+                  <td>סה"כ</td>
+                  <td>שולם?</td>
+                  <td>נשלח?</td>
                   <td></td>
                 </tr>
               </thead>
@@ -148,7 +148,7 @@ const ProfileScreen = () => {
                     <td>
                       <LinkContainer to={`/order/${order._id}`}>
                         <h6 type="button" className="btn-sm">
-                          Details
+                          פרטים
                         </h6>
                       </LinkContainer>
                     </td>

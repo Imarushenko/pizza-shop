@@ -11,7 +11,7 @@ const OrderListScreen = () => {
 
   return (
     <div className="bg-admin rounded">
-      <h2>Orders</h2>
+      <h2>הזמנות</h2>
       {isLoading ? (
         <Loader />
       ) : error ? (
@@ -21,11 +21,11 @@ const OrderListScreen = () => {
           <thead>
             <tr>
               <th>ID</th>
-              <th>USER</th>
-              <th>DATE</th>
-              <th>TOTAL</th>
-              <th>PAID</th>
-              <th>DELIVERED</th>
+              <th>משתמש</th>
+              <th>תאריך</th>
+              <th>סה"כ</th>
+              <th>שולם?</th>
+              <th>נשלח?</th>
               <th></th>
             </tr>
           </thead>
@@ -53,7 +53,7 @@ const OrderListScreen = () => {
                 <td>
                   <LinkContainer to={`/order/${order._id}`}>
                     <h6 type="button" variant="light" className="btn-sm">
-                      Details
+                      פרטים
                     </h6>
                   </LinkContainer>
                 </td>

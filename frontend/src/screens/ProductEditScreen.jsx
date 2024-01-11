@@ -85,10 +85,10 @@ const ProductEditScreen = () => {
   return (
     <>
       <Link to="/admin/productlist" className="btn my-1">
-        Go Back
+        חזור
       </Link>
       <FormContainer>
-        <h2>Edit Product</h2>
+        <h2>עריכת מוצרים</h2>
         {loadingUpdate && <Loader />}
         {isLoading ? (
           <Loader />
@@ -99,7 +99,7 @@ const ProductEditScreen = () => {
         ) : (
           <Form onSubmit={submitHandler}>
             <Form.Group controlId="name" className="my-2">
-              <Form.Label>Name</Form.Label>
+              <Form.Label>שם</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Enter name"
@@ -109,7 +109,7 @@ const ProductEditScreen = () => {
             </Form.Group>
 
             <Form.Group controlId="price" className="my-2">
-              <Form.Label>Price</Form.Label>
+              <Form.Label>מחיר</Form.Label>
               <Form.Control
                 type="number"
                 placeholder="Enter price"
@@ -119,7 +119,7 @@ const ProductEditScreen = () => {
             </Form.Group>
 
             <Form.Group controlId="image" className="my-2">
-              <Form.Label>Image</Form.Label>
+              <Form.Label>תמונה</Form.Label>
               <Form.Control
                 style={{ borderRadius: "0.25rem 0.25rem 0 0" }}
                 type="text"
@@ -136,21 +136,21 @@ const ProductEditScreen = () => {
             </Form.Group>
 
             <Form.Group controlId="category" className="my-2">
-              <Form.Label>Category</Form.Label>
+              <Form.Label>קטגוריה</Form.Label>
               <Form.Control
                 as="select"
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
               >
-                <option value="Pizza">Pizza</option>
-                <option value="Salad">Salad</option>
-                <option value="Sambusak">Sambusak</option>
-                <option value="Specials">Specials</option>
+                <option value="Pizza">פיצה</option>
+                <option value="Salad">סלט</option>
+                <option value="Sambusak">סמבוסק</option>
+                <option value="Specials">ספיישלים</option>
               </Form.Control>
             </Form.Group>
 
             <Form.Group controlId="countInStock" className="my-2">
-              <Form.Label>Count In Stock</Form.Label>
+              <Form.Label>מוצרים במלאי</Form.Label>
               <Form.Control
                 type="number"
                 placeholder="Enter count in stock"
@@ -160,7 +160,7 @@ const ProductEditScreen = () => {
             </Form.Group>
 
             <Form.Group controlId="description" className="my-2">
-              <Form.Label>Description</Form.Label>
+              <Form.Label>תיאור מוצר</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Enter Description"
@@ -171,7 +171,7 @@ const ProductEditScreen = () => {
             </Form.Group>
 
             <Button type="submit" variant="primary" className="my-1">
-              Update
+              עדכן מוצר
             </Button>
           </Form>
         )}

@@ -41,11 +41,10 @@ main {
 }
 
 .bg-admin {
-  background-color: #f2f2f2; /* Light gray */
-  border: 1px solid #000; /* Thin black border */
-  border-radius: 8px; /* Rounded corners */
-  padding: 20px; /* Adjust padding as needed */
-  /* ... (rest of your styles) */
+  background-color: #f2f2f2;
+  border: 1px solid #000;
+  border-radius: 8px;
+  padding: 20px;
 }
 
 .category-tabs {
@@ -75,7 +74,6 @@ main {
 }
 
 .card {
-  /* background: linear-gradient(45deg, #4CAF50 50%, #808080 50%); */
   background: linear-gradient(
     135deg,
     #3f3c3c 0%,
@@ -145,6 +143,9 @@ main {
 }
 
 body {
+  direction: rtl;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  font-size: large;
   background-image: url("C:\develop\shop\frontend\src\assets\bg-web-size.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -236,6 +237,7 @@ table th {
 
 /* search box.css */
 .search-box {
+  direction: rtl;
   display: flex;
   align-items: center;
 }

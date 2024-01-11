@@ -55,6 +55,7 @@ const Header = () => {
         expand="md"
         collapseOnSelect
         className={`${headerClass} custom-navbar`}
+        style={{ direction: "ltr" }}
       >
         <Container>
           <LinkContainer to="/">
@@ -76,7 +77,7 @@ const Header = () => {
               <LinkContainer to="/cart">
                 <Nav.Link className="nav-link-text">
                   <FaShoppingCart />
-                  Cart
+                  עגלה{" "}
                   {cartItems.length > 0 && (
                     <Badge pill bg="danger">
                       {cartItems.reduce((acc, cur) => acc + cur.qty, 0)}
@@ -94,37 +95,37 @@ const Header = () => {
                   className="nav-link-text"
                 >
                   <LinkContainer to="/profile">
-                    <NavDropdown.Item>Profile</NavDropdown.Item>
+                    <NavDropdown.Item>פרופיל</NavDropdown.Item>
                   </LinkContainer>
                   <NavDropdown.Item onClick={logoutHandler}>
-                    Logout
+                    התנתקות
                   </NavDropdown.Item>
                 </NavDropdown>
               ) : (
                 <LinkContainer to="/login">
                   <Nav.Link className="nav-link-text">
                     <FaUser />
-                    Sign In
+                    התחברות
                   </Nav.Link>
                 </LinkContainer>
               )}
               {/* admin */}
               {userInfo && userInfo.isAdmin && (
                 <NavDropdown
-                  title={<span style={{ color: "white" }}>Admin</span>}
+                  title={<span style={{ color: "white" }}>מנהל</span>}
                   id="adminmenu"
                   className="nav-link-text"
                 >
                   <LinkContainer to="/admin/productlist">
-                    <NavDropdown.Item>Products</NavDropdown.Item>
+                    <NavDropdown.Item>מוצרים</NavDropdown.Item>
                   </LinkContainer>
 
                   <LinkContainer to="/admin/userlist">
-                    <NavDropdown.Item>Users</NavDropdown.Item>
+                    <NavDropdown.Item>משתמשים</NavDropdown.Item>
                   </LinkContainer>
 
                   <LinkContainer to="/admin/orderlist">
-                    <NavDropdown.Item>Orders</NavDropdown.Item>
+                    <NavDropdown.Item>הזמנות</NavDropdown.Item>
                   </LinkContainer>
                 </NavDropdown>
               )}

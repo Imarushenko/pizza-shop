@@ -53,9 +53,9 @@ const PlaceOrderScreen = () => {
             <ListGroup.Item
               style={{ backgroundColor: "transparent", color: "white" }}
             >
-              <h2>Shipping</h2>
+              <h2>משלוח</h2>
               <p>
-                <strong>Address: </strong>
+                <strong>כתובת מגורים: </strong>
                 {cart.shippingAddress.address}, {cart.shippingAddress.city},{" "}
                 {cart.shippingAddress.country}
               </p>
@@ -63,16 +63,16 @@ const PlaceOrderScreen = () => {
             <ListGroup.Item
               style={{ backgroundColor: "transparent", color: "white" }}
             >
-              <h2>Payment Method</h2>
-              <strong>Method: </strong>
+              <h2>שיטת משלוח</h2>
+              <strong>באמצעות: </strong>
               {cart.paymentMethod}
             </ListGroup.Item>
             <ListGroup.Item
               style={{ backgroundColor: "transparent", color: "white" }}
             >
-              <h2>Order Items:</h2>
+              <h2>מוצרים בהזמנה:</h2>
               {cart.cartItems.length === 0 ? (
-                <Message>Your cart is empty</Message>
+                <Message>העגלה ריקה</Message>
               ) : (
                 <ListGroup variant="flush">
                   {cart.cartItems.map((item, index) => (
@@ -114,28 +114,28 @@ const PlaceOrderScreen = () => {
         <Col>
           <ListGroup variant="flush" className="rounded-bottom">
             <ListGroup.Item>
-              <h2>Order Summary</h2>
+              <h2>סיכום הזמנה</h2>
               <ListGroup.Item>
                 <Row>
-                  <Col>Items:</Col>
+                  <Col>פריטים:</Col>
                   <Col>₪{cart.itemsPrice}</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
-                  <Col>Shipping:</Col>
+                  <Col>משלוח:</Col>
                   <Col>₪{cart.shippingPrice}</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
-                  <Col>Tax:</Col>
+                  <Col>מסים:</Col>
                   <Col>₪{cart.taxPrice}</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
-                  <Col>Total:</Col>
+                  <Col>סה"כ:</Col>
                   <Col>₪{cart.totalPrice}</Col>
                 </Row>
               </ListGroup.Item>
@@ -151,7 +151,7 @@ const PlaceOrderScreen = () => {
                   disabled={cart.cartItems.length === 0}
                   onClick={placeOrderHandler}
                 >
-                  Place Order
+                  בצע הזמנה
                 </Button>
                 {isLoading && <Loader />}
               </ListGroup.Item>

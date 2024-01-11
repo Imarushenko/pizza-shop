@@ -57,7 +57,7 @@ const ProductScreen = () => {
   return (
     <>
       <Link className="btn my-3" to="/">
-        Go Back
+        חזור
       </Link>
       {isLoading ? (
         <Loader />
@@ -86,14 +86,14 @@ const ProductScreen = () => {
                 <ListGroup.Item>
                   <Rating
                     value={product.rating}
-                    text={`${product.numOfReviews} Reviews`}
+                    text={`${product.numOfReviews} ביקורות`}
                   />
                 </ListGroup.Item>
-                <ListGroup.Item>Price: ₪{product.price}</ListGroup.Item>
+                <ListGroup.Item>מחיר: ₪{product.price}</ListGroup.Item>
                 <ListGroup.Item>
                   {product.countInStock > 1
-                    ? "Available"
-                    : "Temporary Not Available"}
+                    ? "זמין בחנות"
+                    : "המוצר זמנית לא זמין בחנות"}
                 </ListGroup.Item>
                 <ListGroup.Item>{product.description}</ListGroup.Item>
               </ListGroup>
@@ -128,7 +128,7 @@ const ProductScreen = () => {
                   disabled={product.countInStock < 1}
                   onClick={addToCartHandler}
                 >
-                  Add To Cart
+                  הוסף לעגלה
                 </Button>
               </ListGroup.Item>
             </Col>
@@ -148,30 +148,30 @@ const ProductScreen = () => {
                 ))}
 
                 <ListGroup.Item>
-                  <h2>Write a Review</h2>
+                  <h2>כתבו ביקורת על המוצר</h2>
 
                   {loadingProductReview && <Loader />}
 
                   {userInfo ? (
                     <Form onSubmit={submitHandler}>
                       <Form.Group className="my-2" controlId="rating">
-                        <Form.Label>Rating</Form.Label>
+                        <Form.Label>רייטינג</Form.Label>
                         <Form.Control
                           as="select"
                           required
                           value={rating}
                           onChange={(e) => setRating(e.target.value)}
                         >
-                          <option value="">Select...</option>
-                          <option value="1">1 - Poor</option>
-                          <option value="2">2 - Fair</option>
-                          <option value="3">3 - Good</option>
-                          <option value="4">4 - Very Good</option>
-                          <option value="5">5 - Excellent</option>
+                          <option value="">בחר . . . </option>
+                          <option value="1">1 - גרוע</option>
+                          <option value="2">2 - טעון שיפור</option>
+                          <option value="3">3 - טוב</option>
+                          <option value="4">4 - טוב מאוד</option>
+                          <option value="5">5 - מצויין</option>
                         </Form.Control>
                       </Form.Group>
                       <Form.Group className="my-2" controlId="comment">
-                        <Form.Label>Comment</Form.Label>
+                        <Form.Label>תיאור</Form.Label>
                         <Form.Control
                           as="textarea"
                           row="3"
@@ -185,12 +185,12 @@ const ProductScreen = () => {
                         type="submit"
                         variant="primary"
                       >
-                        Submit
+                        הוסף
                       </Button>
                     </Form>
                   ) : (
                     <Message>
-                      Please <Link to="/login">sign in</Link> to write a review
+                      בבקשה <Link to="/login">התחבר\י</Link> על מנת להוסיף ביקורת
                     </Message>
                   )}
                 </ListGroup.Item>

@@ -51,10 +51,10 @@ const UserEditScreen = () => {
   return (
     <>
       <Link to='/admin/userlist' className='btn btn-light my-3'>
-        Go Back
+        חזור
       </Link>
       <FormContainer>
-        <h1>Edit User</h1>
+        <h1>ערוך משתמש</h1>
         {loadingUpdate && <Loader />}
         {isLoading ? (
           <Loader />
@@ -65,7 +65,7 @@ const UserEditScreen = () => {
         ) : (
           <Form onSubmit={submitHandler}>
             <Form.Group className='my-2' controlId='name'>
-              <Form.Label>Name</Form.Label>
+              <Form.Label>שם</Form.Label>
               <Form.Control
                 type='name'
                 placeholder='Enter name'
@@ -75,7 +75,7 @@ const UserEditScreen = () => {
             </Form.Group>
 
             <Form.Group className='my-2' controlId='email'>
-              <Form.Label>Email Address</Form.Label>
+              <Form.Label>כתובת מייל</Form.Label>
               <Form.Control
                 type='email'
                 placeholder='Enter email'
@@ -94,7 +94,7 @@ const UserEditScreen = () => {
             </Form.Group>
 
             <Button type='submit' variant='primary'>
-              Update
+              ערוך
             </Button>
           </Form>
         )}

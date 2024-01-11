@@ -49,12 +49,9 @@ const ProductListScreen = () => {
   return (
     <div className="bg-admin rounded">
       <Row className="align-items-center">
-        <Col>
-          <h2>Products</h2>
-        </Col>
         <Col className="text-end">
           <Button className="btn-sm m-2" onClick={createProductHandler}>
-            <FaEdit size={18} className="m-1" /> Create Product
+            <FaEdit size={18} className="m-1" /> הוסף מוצר חדש
           </Button>
         </Col>
       </Row>
@@ -72,9 +69,9 @@ const ProductListScreen = () => {
             <thead>
               <tr>
                 <th>ID</th>
-                <th>NAME</th>
-                <th>PRICE</th>
-                <th>CATEGORY</th>
+                <th>שם</th>
+                <th>מחיר</th>
+                <th>קטגוריה</th>
                 <th></th>
               </tr>
             </thead>

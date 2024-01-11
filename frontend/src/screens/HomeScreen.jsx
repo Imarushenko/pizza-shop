@@ -22,7 +22,7 @@ const HomeScreen = () => {
         <ProductCarousel />
       ) : (
         <Link to="/" className="btn">
-          Go Back
+          חזור
         </Link>
       )}
       {isLoading ? (

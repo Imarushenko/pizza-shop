@@ -24,11 +24,11 @@ const SearchBox = () => {
         name="q"
         onChange={(e) => setKeyword(e.target.value)}
         value={keyword}
-        placeholder="Search Products..."
+        placeholder="חיפוש מוצרים . . ."
         className="search-input"
       />
       <button type="submit" className="search-button">
-        Search
+        חיפוש
       </button>
     </Form>
   );

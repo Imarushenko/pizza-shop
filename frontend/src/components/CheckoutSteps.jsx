@@ -8,39 +8,39 @@ const CheckoutSteps = ({ step1, step2, step3, step4 }) => {
       <Nav.Item>
         {step1 ? (
           <LinkContainer to="/login" style={{color: 'white'}}>
-            <Nav.Link>Sign In</Nav.Link>
+            <Nav.Link>התחבר</Nav.Link>
           </LinkContainer>
         ) : (
-          <Nav.Link disabled>Sign In</Nav.Link>
+          <Nav.Link disabled>הרשמה</Nav.Link>
         )}
       </Nav.Item>
 
       <Nav.Item>
         {step2 ? (
           <LinkContainer to="/shipping" style={{color: 'white'}}>
-            <Nav.Link>Shipping</Nav.Link>
+            <Nav.Link>משלוח</Nav.Link>
           </LinkContainer>
         ) : (
-          <Nav.Link disabled>Shipping</Nav.Link>
+          <Nav.Link disabled>משלוח</Nav.Link>
         )}
       </Nav.Item>
 
       <Nav.Item>
         {step3 ? (
           <LinkContainer to="/payment" style={{color: 'white'}}>
-            <Nav.Link>Payment</Nav.Link>
+            <Nav.Link>תשלום</Nav.Link>
           </LinkContainer>
         ) : (
-          <Nav.Link disabled>Payment</Nav.Link>
+          <Nav.Link disabled>תשלום</Nav.Link>
         )}
       </Nav.Item>
       <Nav.Item>
         {step4 ? (
           <LinkContainer to="/placeorder" style={{color: 'white'}}>
-            <Nav.Link>Place Order</Nav.Link>
+            <Nav.Link>ביצוע הזמנה</Nav.Link>
           </LinkContainer>
         ) : (
-          <Nav.Link disabled>Place Order</Nav.Link>
+          <Nav.Link disabled>ביצוע הזמנה</Nav.Link>
         )}
       </Nav.Item>
     </Nav>

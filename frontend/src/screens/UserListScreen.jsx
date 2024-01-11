@@ -30,7 +30,7 @@ const UserListScreen = () => {
 
   return (
     <div className="bg-admin rounded">
-      <h2>Users</h2>
+      <h2>משתמשים</h2>
       {loadingDelete && <Loader />}
       {isLoading ? (
         <Loader />
@@ -41,9 +41,9 @@ const UserListScreen = () => {
           <thead>
             <tr>
               <th>ID</th>
-              <th>NAME</th>
-              <th>EMAIL</th>
-              <th>ADMIN</th>
+              <th>שם</th>
+              <th>כתובת מייל</th>
+              <th>מנהל?</th>
               <th></th>
             </tr>
           </thead>

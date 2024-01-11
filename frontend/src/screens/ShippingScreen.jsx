@@ -27,11 +27,11 @@ const ShippingScreen = () => {
     <>
       <CheckoutSteps step1 step2 />
       <FormContainer>
-        <h1>Shipping</h1>
+        <h1>משלוח</h1>
         <Form onSubmit={submitHandler}>
           {/* address */}
           <Form.Group controlId="address" className="my-2">
-            <Form.Label>Address</Form.Label>
+            <Form.Label>כתובת מגורים</Form.Label>
             <Form.Control
               type="text"
               placeholder="Enter Address"
@@ -41,7 +41,7 @@ const ShippingScreen = () => {
           </Form.Group>
           {/* city */}
           <Form.Group controlId="city" className="my-2">
-            <Form.Label>City</Form.Label>
+            <Form.Label>עיר</Form.Label>
             <Form.Control
               type="text"
               placeholder="Enter City"
@@ -51,7 +51,7 @@ const ShippingScreen = () => {
           </Form.Group>
           {/* country */}
           <Form.Group controlId="country" className="my-2">
-            <Form.Label>Country</Form.Label>
+            <Form.Label>מדינה</Form.Label>
             <Form.Control
               type="text"
               placeholder="Enter Country"
@@ -61,7 +61,7 @@ const ShippingScreen = () => {
           </Form.Group>
 
           <Button type="submit" variant="primary" className="my-2">
-            Continue
+            המשך
           </Button>
         </Form>
       </FormContainer>

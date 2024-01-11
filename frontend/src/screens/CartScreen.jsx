@@ -49,13 +49,13 @@ const CartScreen = () => {
                 />
                 {!userInfo ? (
                   <div className="position-absolute bottom-0 end-0 p-2">
-                    <span className="me-2">Hey there!</span>
+                    <span className="me-2">ברוכים הבאים!</span>
                     <Link to="/login" className="text-decoration-none me-2">
-                      Login
+                      התחברות
                     </Link>
                     <span>/</span>
                     <Link to="/register" className="text-decoration-none ms-2">
-                      Register
+                      הרשמה
                     </Link>
                   </div>
                 ) : (
@@ -113,8 +113,8 @@ const CartScreen = () => {
           <ListGroup variant="flush" className="rounded border border-dark">
             <ListGroup.Item>
               <h2>
-                Subtotal ({cartItems.reduce((acc, item) => acc + item.qty, 0)})
-                items
+                סה"כ ({cartItems.reduce((acc, item) => acc + item.qty, 0)})
+                מוצרים
               </h2>
               ₪
               {cartItems
@@ -127,7 +127,7 @@ const CartScreen = () => {
                 disabled={cartItems.length === 0}
                 onClick={checkoutHandler}
               >
-                Proceed To Checkout
+                המשך לתשלום
               </Button>
             </ListGroup.Item>
           </ListGroup>

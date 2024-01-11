@@ -31,10 +31,10 @@ const PaymentScreen = () => {
     <>
       <CheckoutSteps step1 step2 step3 />
       <FormContainer>
-        <h1>Payment Method</h1>
+        <h1>שיטת משלוח</h1>
         <Form onSubmit={submitHandler}>
           <Form.Group>
-            <Form.Label as="legend">Select Method</Form.Label>
+            <Form.Label as="legend">בחר שיטת משלוח</Form.Label>
             <Col>
               <Form.Check
                 type="radio"
@@ -49,7 +49,7 @@ const PaymentScreen = () => {
             </Col>
           </Form.Group>
           <Button type="submit" variant="primary">
-            Continue
+            המשך
           </Button>
         </Form>
       </FormContainer>

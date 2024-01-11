@@ -42,11 +42,11 @@ const LoginScreen = () => {
 
   return (
     <FormContainer>
-      <h1>Sign In</h1>
+      <h1>התחברות</h1>
       <Form onSubmit={submitHandler}>
         {/* email */}
         <Form.Group controlId="email" className="my-3">
-          <Form.Label>Email Address</Form.Label>
+          <Form.Label>כתובת מייל</Form.Label>
           <Form.Control
             type="email"
             placeholder="Enter Email"
@@ -56,7 +56,7 @@ const LoginScreen = () => {
         </Form.Group>
         {/* password */}
         <Form.Group controlId="password" className="my-3">
-          <Form.Label>Password</Form.Label>
+          <Form.Label>סיסמא</Form.Label>
           <Form.Control
             type="password"
             placeholder="Enter Password"
@@ -70,15 +70,18 @@ const LoginScreen = () => {
           className="mt-2"
           disabled={isLoading}
         >
-          Sign In
+          התחברות
         </Button>
         {isLoading && <Loader />}
       </Form>
       <Row className="py-3">
         <Col>
-          Don't have an account?{" "}
-          <Link to={redirect ? `/register?redirect=${redirect}` : "/register"}>
-            Register
+          <span>עדיין לא רשום\ה? </span>
+          <Link
+            to={redirect ? `/register?redirect=${redirect}` : "/register"}
+            style={{ textDecoration: "none" }}
+          >
+            <span style={{ color: "black", fontWeight: "bold" }}>הרשמה</span>
           </Link>
         </Col>
       </Row>

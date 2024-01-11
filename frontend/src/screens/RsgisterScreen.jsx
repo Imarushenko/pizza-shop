@@ -49,11 +49,11 @@ const RegisterScreen = () => {
 
   return (
     <FormContainer>
-      <h1>Sign Up</h1>
+      <h1>הרשמה</h1>
       <Form onSubmit={submitHandler}>
         <Form.Group controlId="name" className="my-3">
           {/* name */}
-          <Form.Label>Name</Form.Label>
+          <Form.Label>שם</Form.Label>
           <Form.Control
             type="text"
             placeholder="Enter Name"
@@ -63,7 +63,7 @@ const RegisterScreen = () => {
         </Form.Group>
         {/* email */}
         <Form.Group controlId="email" className="my-3">
-          <Form.Label>Email Address</Form.Label>
+          <Form.Label>כתובת מייל</Form.Label>
           <Form.Control
             type="email"
             placeholder="Enter Email"
@@ -73,7 +73,7 @@ const RegisterScreen = () => {
         </Form.Group>
         {/* password */}
         <Form.Group controlId="password" className="my-3">
-          <Form.Label>Password</Form.Label>
+          <Form.Label>סיסמא</Form.Label>
           <Form.Control
             type="password"
             placeholder="Enter Password"
@@ -83,7 +83,7 @@ const RegisterScreen = () => {
         </Form.Group>
         {/* confirm password */}
         <Form.Group controlId="confirmPassword" className="my-3">
-          <Form.Label>Confirm Password</Form.Label>
+          <Form.Label>אשר סיסמא</Form.Label>
           <Form.Control
             type="password"
             placeholder="Confirm Password"
@@ -97,15 +97,15 @@ const RegisterScreen = () => {
           className="mt-2"
           disabled={isLoading}
         >
-          Register
+          הרשמה
         </Button>
         {isLoading && <Loader />}
       </Form>
       <Row className="py-3">
         <Col>
-          Already have an acoount?
+          כבר רשומים?
           <Link to={redirect ? `/login?redirect=${redirect}` : "/login"}>
-            Log In
+            התחברות
           </Link>
         </Col>
       </Row>
