@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { savePaymentMethod } from "../slices/cartSlice";
 
 const PaymentScreen = () => {
-  const [paymentMethod, setPaymentMethod] = useState("PayPal");
+  const [paymentMethod, setPaymentMethod] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -21,6 +21,10 @@ const PaymentScreen = () => {
     }
   }, [shippingAddress, navigate]);
 
+  // useEffect(() => {
+  //   setPaymentMethod("PayLater");
+  // }, []);
+
   const submitHandler = (e) => {
     e.preventDefault();
     dispatch(savePaymentMethod(paymentMethod));
@@ -31,15 +35,26 @@ const PaymentScreen = () => {
     <>
       <CheckoutSteps step1 step2 step3 />
       <FormContainer>
-        <h1>שיטת משלוח</h1>
+        <h1>שיטת תשלום</h1>
         <Form onSubmit={submitHandler}>
           <Form.Group>
-            <Form.Label as="legend">בחר שיטת משלוח</Form.Label>
+            {/* <Col>
+              <Form.Check
+                type="radio"
+                className="my-2"
+                label="תשלום במקום\לשליח"
+                id="PayLater"
+                name="paymentMethod"
+                value="PayLater"
+                checked
+                onChange={(e) => setPaymentMethod(e.target.value)}
+              ></Form.Check>
+            </Col> */}
             <Col>
               <Form.Check
                 type="radio"
                 className="my-2"
-                label="PayPal or Credit Card"
+                label="PayPal או אשראי"
                 id="PayPal"
                 name="paymentMethod"
                 value="PayPal"
