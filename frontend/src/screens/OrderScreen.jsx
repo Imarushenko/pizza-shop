@@ -63,7 +63,7 @@ const OrderScreen = () => {
   function onApprove(data, actions) {
     return actions.order.capture().then(async function (details) {
       try {
-        await payOrder({ orderId, details });
+        await payOrder({ orderId, details }).unwrap();
         refetch();
         toast.success("Payment Successful");
       } catch (error) {
@@ -130,9 +130,7 @@ const OrderScreen = () => {
                 {order.shippingAddress.city}, {order.shippingAddress.country}
               </p>
               {order.isDelivered ? (
-                <Message variant="success">
-                  נשלח ב {order.deliveredAt}
-                </Message>
+                <Message variant="success">נשלח ב {order.deliveredAt}</Message>
               ) : (
                 <Message variant="danger">לא נשלח</Message>
               )}
