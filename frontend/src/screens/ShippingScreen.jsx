@@ -34,7 +34,7 @@ const ShippingScreen = () => {
             <Form.Label>כתובת מגורים</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Enter Address"
+              placeholder="רחוב, מספר בית, כניסה"
               value={address}
               onChange={(e) => setAddress(e.target.value)}
             ></Form.Control>
@@ -44,7 +44,7 @@ const ShippingScreen = () => {
             <Form.Label>עיר</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Enter City"
+              placeholder="עיר"
               value={city}
               onChange={(e) => setCity(e.target.value)}
             ></Form.Control>
@@ -53,9 +53,11 @@ const ShippingScreen = () => {
           <Form.Group controlId="country" className="my-2">
             <Form.Label>מדינה</Form.Label>
             <Form.Control
+              disabled={true}
               type="text"
-              placeholder="Enter Country"
+              placeholder="ישראל"
               value={country}
+              defaultValue="ישראל"
               onChange={(e) => setCountry(e.target.value)}
             ></Form.Control>
           </Form.Group>
