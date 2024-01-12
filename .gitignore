@@ -25,6 +25,9 @@ yarn-error.log*
 
 # Ignore image files
 *.png
-*.jpg
+# *.jpg
 *.jpeg
 *.gif
+
+# uploads folder
+/uploads
