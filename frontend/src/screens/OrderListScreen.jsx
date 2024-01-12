@@ -17,16 +17,16 @@ const OrderListScreen = () => {
       ) : error ? (
         <Message variant="danger">{error}</Message>
       ) : (
-        <Table striped bordered hover responsive className="table">
+        <Table striped bordered hover responsive className="table-sm">
           <thead>
             <tr>
-              <th>ID</th>
-              <th>משתמש</th>
-              <th>תאריך</th>
-              <th>סה"כ</th>
-              <th>שולם?</th>
-              <th>נשלח?</th>
-              <th></th>
+              <td>ID</td>
+              <td>משתמש</td>
+              <td>תאריך</td>
+              <td>סה"כ</td>
+              <td>שולם?</td>
+              <td>נשלח?</td>
+              <td></td>
             </tr>
           </thead>
           <tbody>

@@ -11,6 +11,7 @@ import {
   useGetOrderDetailsQuery,
   useGetPaypalClientIdQuery,
   usePayOrderMutation,
+  useMarkOrderAsPaidMutation,
 } from "../slices/ordersApiSlice";
 
 const OrderScreen = () => {
@@ -27,6 +28,9 @@ const OrderScreen = () => {
 
   const [deliverOrder, { isLoading: loadingDeliver }] =
     useDeliverOrderMutation();
+
+  const [markPaid, { isLoading: loadingMarkPaid }] =
+    useMarkOrderAsPaidMutation();
 
   const { userInfo } = useSelector((state) => state.auth);
 
@@ -70,14 +74,6 @@ const OrderScreen = () => {
     });
   }
 
-  // TESTING ONLY! REMOVE BEFORE PRODUCTION
-  // async function onApproveTest() {
-  //   await payOrder({ orderId, details: { payer: {} } });
-  //   refetch();
-
-  //   toast.success('Order is paid');
-  // }
-
   function onError(err) {
     toast.error(err.message);
   }
@@ -97,8 +93,23 @@ const OrderScreen = () => {
   }
 
   const deliverOrderHandler = async () => {
-    await deliverOrder(orderId);
-    refetch();
+    try {
+      await deliverOrder(orderId);
+      refetch();
+      toast.success("הזמנה סומנה כנשלחה!");
+    } catch (err) {
+      toast.error(err?.data?.message || err.error);
+    }
+  };
+
+  const markPaidHandler = async () => {
+    try {
+      await markPaid(orderId);
+      refetch();
+      toast.success("הזמנה סומנה כשולמה!");
+    } catch (err) {
+      toast.error(err?.data?.message || err.error);
+    }
   };
 
   return isLoading ? (
@@ -206,6 +217,7 @@ const OrderScreen = () => {
                   )}
                 </ListGroup.Item>
               )}
+              {/* delivered order */}
               {loadingDeliver && <Loader />}
               {userInfo &&
                 userInfo.isAdmin &&
@@ -217,10 +229,23 @@ const OrderScreen = () => {
                       className="btn btn-block"
                       onClick={deliverOrderHandler}
                     >
-                      סמן כנשלח
+                      סמן הזמנה כנשלחה
                     </Button>
                   </ListGroup.Item>
                 )}
+              {/* paid order */}
+              {loadingMarkPaid && <Loader />}
+              {userInfo && userInfo.isAdmin && !order.isPaid && (
+                <ListGroup.Item>
+                  <Button
+                    type="button"
+                    className="btn btn-block"
+                    onClick={markPaidHandler}
+                  >
+                    סמן הזמנה כשולמה
+                  </Button>
+                </ListGroup.Item>
+              )}
             </ListGroup.Item>
           </ListGroup>
         </Col>
