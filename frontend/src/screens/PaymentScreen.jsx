@@ -21,9 +21,9 @@ const PaymentScreen = () => {
     }
   }, [shippingAddress, navigate]);
 
-  useEffect(() => {
-    setPaymentMethod("PayLater");
-  }, []);
+  // useEffect(() => {
+  //   setPaymentMethod("PayLater");
+  // }, []);
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -38,7 +38,7 @@ const PaymentScreen = () => {
         <h1>שיטת תשלום</h1>
         <Form onSubmit={submitHandler}>
           <Form.Group>
-            <Col>
+            {/* <Col>
               <Form.Check
                 type="radio"
                 className="my-2"
@@ -49,7 +49,7 @@ const PaymentScreen = () => {
                 checked
                 onChange={(e) => setPaymentMethod(e.target.value)}
               ></Form.Check>
-            </Col>
+            </Col> */}
             <Col>
               <Form.Check
                 type="radio"
