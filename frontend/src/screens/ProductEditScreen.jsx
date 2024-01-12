@@ -142,10 +142,11 @@ const ProductEditScreen = () => {
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
               >
-                <option value="Pizza">פיצה</option>
-                <option value="Salad">סלט</option>
-                <option value="Sambusak">סמבוסק</option>
-                <option value="Specials">ספיישלים</option>
+                <option value="">בחר . . .</option>
+                <option value="פיצה">פיצה</option>
+                <option value="סלט">סלט</option>
+                <option value="סמבוסק">סמבוסק</option>
+                <option value="ספיישל">ספיישל</option>
               </Form.Control>
             </Form.Group>
 
