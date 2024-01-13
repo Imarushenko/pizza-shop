@@ -46,6 +46,7 @@ const ProductListScreen = () => {
       }
     }
   };
+  
   return (
     <div className="bg-admin rounded">
       <Row className="align-items-center">

@@ -55,7 +55,7 @@ const ProductScreen = () => {
   };
 
   return (
-    <>
+    <div className="p-3 rounded" style={{ backgroundColor: "#EAEDED" }}>
       <Link className="btn my-3" to="/">
         חזור
       </Link>
@@ -100,7 +100,7 @@ const ProductScreen = () => {
               {product.countInStock > 0 && (
                 <ListGroup.Item className="mt-2">
                   <Row>
-                    <Col className="text-white">Qty:</Col>
+                    <Col className="text-white">כמות:</Col>
                   </Row>
                   <Row className="mt-1" style={{ width: "70px" }}>
                     <Col>
@@ -190,7 +190,8 @@ const ProductScreen = () => {
                     </Form>
                   ) : (
                     <Message>
-                      בבקשה <Link to="/login">התחבר\י</Link> על מנת להוסיף ביקורת
+                      בבקשה <Link to="/login">התחבר\י</Link> על מנת להוסיף
+                      ביקורת
                     </Message>
                   )}
                 </ListGroup.Item>
@@ -199,7 +200,7 @@ const ProductScreen = () => {
           </Row>
         </>
       )}
-    </>
+    </div>
   );
 };
 
