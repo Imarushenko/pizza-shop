@@ -48,7 +48,7 @@ const ProductScreen = () => {
         comment,
       }).unwrap();
       refetch();
-      toast.success("Review Submitted");
+      toast.success("נוספה ביקורת חדשה");
     } catch (err) {
       toast.error(err?.data?.message || err.error);
     }

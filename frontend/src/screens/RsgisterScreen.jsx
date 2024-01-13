@@ -34,7 +34,7 @@ const RegisterScreen = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
-      toast.error("Passwords don't match");
+      toast.error("הסיסמאות אינן תואמות");
       return;
     } else {
       try {
@@ -103,9 +103,12 @@ const RegisterScreen = () => {
       </Form>
       <Row className="py-3">
         <Col>
-          כבר רשומים?
-          <Link to={redirect ? `/login?redirect=${redirect}` : "/login"}>
-            התחברות
+        <span>כבר רשומים? </span>
+          <Link
+            to={redirect ? `/login?redirect=${redirect}` : "/login"}
+            style={{ textDecoration: "none" }}
+          >
+            <span style={{ color: "black", fontWeight: "bold" }}>התחברות</span>
           </Link>
         </Col>
       </Row>

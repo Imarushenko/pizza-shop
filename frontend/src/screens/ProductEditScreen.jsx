@@ -64,7 +64,7 @@ const ProductEditScreen = () => {
     if (result.error) {
       toast.error(result.error);
     } else {
-      toast.success("Product updated successfully!");
+      toast.success("פרטי המוצר עודכנו!");
       refetch();
       navigate("/admin/productlist");
     }

@@ -16,11 +16,11 @@ const UserListScreen = () => {
   const [deleteUser, { isLoading: loadingDelete }] = useDeleteUserMutation();
 
   const deleteHandler = async (id) => {
-    if (window.confirm("Are you sure delete user?")) {
+    if (window.confirm("האם למחוק משתמש?")) {
       try {
         await deleteUser(id);
         refetch();
-        toast.success("User deleted!");
+        toast.success("משתמש נמחק");
         refetch();
       } catch (err) {
         toast.error(err?.data?.message || err.error);
